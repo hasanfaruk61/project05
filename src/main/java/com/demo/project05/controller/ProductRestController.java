@@ -20,8 +20,8 @@ public class ProductRestController {
     }
 
     @PostMapping("products")
-    public ResponseEntity<String> saveProduct(@RequestBody ProductRequestDTO productDTO) {
-        String response = productService.saveProduct(productDTO);
+    public ResponseEntity<String> saveProduct(@RequestBody ProductRequestDTO productRequestDTO) {
+        String response = productService.saveProduct(productRequestDTO);
 
         return ResponseEntity.ok(response);
     }

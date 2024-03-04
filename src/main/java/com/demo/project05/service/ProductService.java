@@ -17,18 +17,18 @@ public class ProductService {
     }
 
     @Transactional
-    public String saveProduct(ProductRequestDTO productDTO) {
-        Optional<Product> existingProduct = productRepository.findByName(productDTO.getName());
+    public String saveProduct(ProductRequestDTO productRequestDTO) {
+        Optional<Product> existingProduct = productRepository.findByName(productRequestDTO.getName());
         if (existingProduct.isPresent()) {
             return "Bu ürün zaten kaydedilmiştir";
         }
 
         Product newProduct = new Product();
-        newProduct.setName(productDTO.getName());
-        newProduct.setCategory(productDTO.getCategory());
-        newProduct.setPhotoUrl(productDTO.getPhotoUrl());
-        newProduct.setDescription(productDTO.getDescription());
-        newProduct.setPrice(productDTO.getPrice());
+        newProduct.setName(productRequestDTO.getName());
+        newProduct.setCategory(productRequestDTO.getCategory());
+        newProduct.setPhotoUrl(productRequestDTO.getPhotoUrl());
+        newProduct.setDescription(productRequestDTO.getDescription());
+        newProduct.setPrice(productRequestDTO.getPrice());
 
         productRepository.save(newProduct);
 
