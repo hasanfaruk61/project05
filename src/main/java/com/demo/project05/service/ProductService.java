@@ -1,7 +1,7 @@
 package com.demo.project05.service;
 
 import com.demo.project05.entity.Product;
-import com.demo.project05.entitydto.ProductDTO;
+import com.demo.project05.entitydto.ProductRequestDTO;
 import com.demo.project05.repository.ProductRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
@@ -17,7 +17,7 @@ public class ProductService {
     }
 
     @Transactional
-    public String saveProduct(ProductDTO productDTO) {
+    public String saveProduct(ProductRequestDTO productDTO) {
         Optional<Product> existingProduct = productRepository.findByName(productDTO.getName());
         if (existingProduct.isPresent()) {
             return "Bu ürün zaten kaydedilmiştir";

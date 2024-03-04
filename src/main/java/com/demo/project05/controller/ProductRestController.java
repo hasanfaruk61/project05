@@ -1,7 +1,7 @@
 package com.demo.project05.controller;
 
 import com.demo.project05.entity.Product;
-import com.demo.project05.entitydto.ProductDTO;
+import com.demo.project05.entitydto.ProductRequestDTO;
 import com.demo.project05.service.ProductService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,7 +20,7 @@ public class ProductRestController {
     }
 
     @PostMapping("products")
-    public ResponseEntity<String> saveProduct(@RequestBody ProductDTO productDTO) {
+    public ResponseEntity<String> saveProduct(@RequestBody ProductRequestDTO productDTO) {
         String response = productService.saveProduct(productDTO);
 
         return ResponseEntity.ok(response);
