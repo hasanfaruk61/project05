@@ -1,16 +1,16 @@
 package com.demo.project05.entitydto;
 
-public class ProductDTO {
+public class ProductRequestDTO {
     private String name;
     private String category;
     private String photoUrl;
     private String description;
     private String price;
 
-    public ProductDTO() {
+    public ProductRequestDTO() {
     }
 
-    public ProductDTO(String name, String category, String photoUrl, String description, String price) {
+    public ProductRequestDTO(String name, String category, String photoUrl, String description, String price) {
         this.name = name;
         this.category = category;
         this.photoUrl = photoUrl;
