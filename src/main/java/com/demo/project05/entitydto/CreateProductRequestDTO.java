@@ -1,16 +1,17 @@
 package com.demo.project05.entitydto;
 
-public class ProductRequestDTO {
+public class CreateProductRequestDTO {
+
     private String name;
     private String category;
     private String photoUrl;
     private String description;
-    private String price;
+    private Double price;
 
-    public ProductRequestDTO() {
+    public CreateProductRequestDTO() {
     }
 
-    public ProductRequestDTO(String name, String category, String photoUrl, String description, String price) {
+    public CreateProductRequestDTO(String name, String category, String photoUrl, String description, double price) {
         this.name = name;
         this.category = category;
         this.photoUrl = photoUrl;
@@ -50,11 +51,11 @@ public class ProductRequestDTO {
         this.description = description;
     }
 
-    public String getPrice() {
+    public Double getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(Double price) {
         this.price = price;
     }
 }
